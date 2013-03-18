@@ -1,0 +1,24 @@
+<div class="control-group">
+  <label for="name" class="control-label">name</label>
+  <div class="controls">
+    <%- contentTag('input', release.name, {type:'text', class:'span6', name:'name'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="upc" class="control-label">upc</label>
+  <div class="controls">
+    <%- contentTag('input', release.upc, {type:'text', class:'span6', name:'upc'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="releaseDate" class="control-label">releaseDate</label>
+  <div class="controls">
+    <%- contentTag('input', release.releaseDate, {type:'text', class:'span6', name:'releaseDate'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="uid" class="control-label">uid</label>
+  <div class="controls">
+    <%- contentTag('input', release.uid, {type:'number', class:'span2', name:'uid'}) %>
+  </div>
+</div>

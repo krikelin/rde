@@ -1,0 +1,62 @@
+<div class="hero-unit">
+  <h2>All Lockouts</h2>
+  <%- linkTo('Create a new Lockout', addLockoutPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="lockouts-list">
+<% if (lockouts) { %>
+<% for (var i = 0, ii = lockouts.length; i < ii; i++) { %>
+  <div class="row list-item" id="lockout-<%= lockouts[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(lockouts[i].name, lockoutPath(lockouts[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= lockouts[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
+
+<script type="text/javascript">
+$(function () {
+  geddy.io.addListenersForModels(['Lockout']);
+
+  var renderTemplate = function (lockout) {
+    var template = [ ''
+      , '<div class="row list-item" id="lockout-' + lockout.id + '">'
+      , '  <div class="span8">'
+      , '    <h3><a href="/lockouts/' + lockout.id + '">' + lockout.name + '</a></h3>'
+      , '  </div>'
+      , '  <div class="span4">'
+      , '    <h3><i class="icon-list-alt"></i>' + lockout.id + '</h3>'
+      , '  </div>'
+      , '</div>'
+    ].join('');
+
+    return $(template);
+  }
+
+  var LockoutsController = function (opts) {
+    this.options = opts || {};
+
+    this.create = function (lockout) {
+      $('#lockouts-list').append(renderTemplate(lockout));
+    };
+
+    this.update = function (lockout) {
+      $('#lockout-' + lockout.id).replaceWith(renderTemplate(lockout));
+    };
+
+    this.remove = function (id) {
+      $('#lockout-' + id).remove();
+    };
+
+  };
+  geddy.Lockouts = new LockoutsController();
+
+  geddy.model.Lockout.on('save'   , geddy.Lockouts.create);
+  geddy.model.Lockout.on('update' , geddy.Lockouts.update);
+  geddy.model.Lockout.on('remove' , geddy.Lockouts.remove);
+});
+</script>

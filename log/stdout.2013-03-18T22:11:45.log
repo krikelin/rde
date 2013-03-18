@@ -1,0 +1,56 @@
+[Mon, 18 Mar 2013 21:11:04 GMT] INFO Server starting with config: {
+  "environment": "development",
+  "workers": 1,
+  "port": 4000,
+  "spdy": null,
+  "ssl": null,
+  "debug": true,
+  "rotateWorkers": false,
+  "rotationWindow": 7200000,
+  "rotationTimeout": 300000,
+  "logDir": "/home/alecca/drsounds/log",
+  "gracefulShutdownTimeout": 30000,
+  "heartbeatInterval": 5000,
+  "heartbeatWindow": 20000,
+  "staticFilePath": "/home/alecca/drsounds/public",
+  "sessions": {
+    "store": "memory",
+    "key": "sid",
+    "expiry": 1209600
+  },
+  "cookieSessionKey": "sdata",
+  "metrics": null,
+  "i18n": {
+    "defaultLocale": "en-us",
+    "loadPaths": [
+      "/home/alecca/drsounds/config/locales"
+    ]
+  },
+  "hostname": "localhost",
+  "fullHostname": "http://localhost:4000",
+  "connectCompatibility": false,
+  "realtime": true,
+  "detailedErrors": true,
+  "model": {
+    "defaultAdapter": "memory"
+  },
+  "passport": {
+    "successRedirect": "/",
+    "failureRedirect": "/login",
+    "twitter": {
+      "consumerKey": "XXXXX",
+      "consumerSecret": "XXXXX"
+    },
+    "facebook": {
+      "clientID": "XXXXX",
+      "clientSecret": "XXXXX"
+    },
+    "yammer": {
+      "clientID": "XXXXX",
+      "clientSecret": "XXXXX"
+    }
+  },
+  "secret": "ga7j3G0M7WwjyBy13P0r0p2lw1e27lhS7pGuTXv0P9yWMuriUlvXICD7lcXGCusL5SkHccTemjntAfutxm03ykDxseRyxx7xVFPMTClVwjEv0s7HQiNQuVtTomn2WBkc"
+}
+[Mon, 18 Mar 2013 21:11:04 GMT] INFO Creating 1 worker process.
+[Mon, 18 Mar 2013 21:11:05 GMT] INFO Server worker running in development on port 4000 with a PID of: 3481
