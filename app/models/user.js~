@@ -12,7 +12,8 @@ var User = function () {
   this.validatesConfirmed('password', 'confirmPassword');
 
   this.hasMany('Passports');
-  this.hasMany('Releases');
+  this.hasMany('Releases'); 
+  this.hasMany('Lockouts');
 };
 
 User = geddy.model.register('User', User);

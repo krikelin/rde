@@ -52,4 +52,6 @@ router.get('/auth/yammer/callback').to('Auth.yammerCallback');
 router.resource('users');
 router.resource('lockouts');
 router.resource('releases');
+router.resource('promotions');
+router.resource('loves');
 exports.router = router;

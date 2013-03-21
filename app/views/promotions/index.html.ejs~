@@ -1,0 +1,78 @@
+<div class="hero-unit">
+  <h2>All Promotions</h2>
+  <%- linkTo('Create a new Promotion', addPromotionPath, {class: 'btn pull-right'}); %>
+</div>
+<h3>Submissions</h3>
+<div class="row-fluid list-item">
+  <div class="span12">
+    <div id="promotions-list">
+    <% if (promotions.submissions) { %>
+    <table class="table table-condensed table-bordered table-striped">
+      <thead>
+        <th>
+          <td></td>
+          <td>Promotion name</td>
+          <td>Date Submitted</td>
+          <td>Price</td>
+          <td></td>
+        </th>
+      </thead>
+      <tbody>    
+        <% for (var i = 0, ii = promotions.submissions.length; i < ii; i++) { if(!promotions.submissions[i]) continue;%>
+        <tr id="promotion-<%= promotions.submissions[i].id; %>">
+          <td></td>
+          <td >
+            <% if(promotions.submissions[i].dateSubmitted) { %>
+            <%- linkTo(promotions.submissions[i].dateSubmitted, promotionPath(promotions.submissions[i].id)); %>
+            <% } %>       
+          </td>
+          <td >
+            <%- linkTo(promotions.submissions[i].name, promotionPath(promotions.submissions[i].id)); %>
+          </td>
+          <td ><%- promotions.submissions[i].price; %> SEK</td>
+           <td></td>
+        </tr>
+      <% } %>
+      </tbody>
+    </table>
+    <% } %>
+</div>
+</div>
+</div>
+<h3>Secured promotions</h3>
+<div class="row-fluid list-item">
+  <div class="span12">
+    <div id="promotions-list">
+    <% if (promotions.secured) { %>
+    <table class="table table-condensed table-striped">
+      <thead>
+        <th>
+          <td></td>
+          <td>Date</td>
+          <td>Price</td>
+          <td></td>
+        </th>
+      </thead>
+      <tbody>    
+        <% for (var i = 0, ii = promotions.secured.length; i < ii; i++) { if(!promotions.secured[i]) continue;%>
+        <tr id="promotion-<%= promotions.secured[i].id; %>">
+          <td></td>
+          <td>
+            <% if(promotions.secured[i].datePromoted) { %>
+            <%- linkTo(promotions.secured[i].datePromoted, promotionPath(promotions.secured[i].id)); %>
+            <% } %>
+          </td>
+          <td>
+            <%- linkTo(promotions.secured[i].name, promotionPath(promotions.secured[i].id)); %>
+          </td>
+          
+          <td><%- promotions.secured[i].price; %> SEK</td>
+          
+        </tr>
+      <% } %>
+      </tbody>
+    </table>
+    <% } %>
+</div>
+</div>
+</div>

@@ -1,4 +1,5 @@
 var Releases = function () {
+  this.before(require('../helpers/passport').requireAuth);
   this.respondsWith = ['html', 'json', 'xml', 'js', 'txt'];
 
   this.index = function (req, resp, params) {
@@ -15,7 +16,7 @@ var Releases = function () {
 
   this.create = function (req, resp, params) {
     params.id = params.id || geddy.string.uuid(10);
-  
+   
     params.userId = this.session.get('userId');
     console.log(params.userId);    
     var self = this

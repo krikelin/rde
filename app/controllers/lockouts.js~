@@ -15,7 +15,7 @@ var Lockouts = function () {
 
   this.create = function (req, resp, params) {
     params.id = params.id || geddy.string.uuid(10);
-
+    params.userId = this.session.get('userId');
     var self = this
       , lockout = geddy.model.Lockout.create(params);
 

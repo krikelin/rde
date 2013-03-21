@@ -14,6 +14,7 @@ var User = function () {
   this.hasMany('Passports');
   this.hasMany('Releases');
   this.hasMany('Lockouts');
+  this.hasMany('Promotions');
 };
 
 User = geddy.model.register('User', User);

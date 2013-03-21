@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Geddy App | This app uses Geddy.js</title>
+    <title>Leros | This app uses Geddy.js</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width" />
@@ -34,12 +34,13 @@
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="i-bar"><i class="icon-chevron-down icon-white"></i></span>
           </a>
-          <%- linkTo('Geddy App', mainsPath, {class: 'brand'}) %>
+          <%- linkTo('Leros', mainsPath, {class: 'brand'}) %>
           <div class="nav-collapse">
             <ul class="nav">
               <li class="active"><%- linkTo('Home', mainsPath) %></li>
-              <li><%- linkTo('Releases', 'http://geddyjs.org/tutorial') %></li>
+              <li><%- linkTo('Releases', '/releases') %></li>
               <li><%- linkTo('Lockouts', '/lockouts') %></li>
+              <li><%- linkTo('Promotions', '/promotions') %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

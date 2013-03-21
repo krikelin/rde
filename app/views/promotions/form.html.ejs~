@@ -1,0 +1,36 @@
+<div class="control-group">
+  <label for="name" class="control-label">name</label>
+  <div class="controls">
+    <%- contentTag('input', promotion.name, {type:'text', class:'span6', name:'name'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="price" class="control-label">price</label>
+  <div class="controls">
+    <%- contentTag('input', promotion.price, {type:'text', class:'span6', name:'price', type: 'number'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="description" class="control-label">description</label>
+  <div class="controls">
+    <%- contentTag('input', promotion.description, {type:'text', class:'span6', name:'description'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="date" class="control-label">Date Submitted</label>
+  <div class="controls">
+    <%- contentTag('input', promotion.dateSubmitted, {type: 'text', class:'span2', name:'dateSubmitted'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="date" class="control-label">date</label>
+  <div class="controls">
+    <%- contentTag('input', promotion.datePromoted, {type: 'text', class:'span2', name:'datePromoted'}) %>
+  </div>
+</div>
+<div class="control-group">
+  <label for="date" class="control-label">release id (not UPC)</label>
+  <div class="controls">
+    <%- contentTag('input', promotion.releaseId, {type: 'text', class:'span2', name:'releaseId'}) %>
+  </div>
+</div>

@@ -3,18 +3,33 @@
   <%- linkTo('Create a new Lockout', addLockoutPath, {class: 'btn pull-right'}); %>
 </div>
 
-<div id="lockouts-list">
+<div class="row-fluid list-item">
+  <div class="span12">
 <% if (lockouts) { %>
+<table class="table table-striped table-condensed">
+  <thead>
+    <th>
+      <td></td>
+      <td>Name</td>
+      <td>Start date</td>
+      <td>End date</td>
+    </tr>
+  </thead>
+  <tbody id="lockouts-list">
 <% for (var i = 0, ii = lockouts.length; i < ii; i++) { %>
-  <div class="row list-item" id="lockout-<%= lockouts[i].id; %>">
-    <div class="span8">
-      <h3><%- linkTo(lockouts[i].name, lockoutPath(lockouts[i].id)); %></h3>
-    </div>
-    <div class="span4">
-      <h3><i class="icon-list-alt"></i><%= lockouts[i].id; %></h3>
-    </div>
-  </div>
+  <tr class="" id="lockout-<%= lockouts[i].id; %>">
+      <td></td>
+      <td><%- linkTo(lockouts[i].name, lockoutPath(lockouts[i].id)); %>
+      <td class="">
+        <%= lockouts[i].startDate; %>
+      </td>
+      <td>
+        <%= lockouts[i].endDate %>
+      </td>
+      <td></td>
+  </tr>
 <% } %>
+</table>
 <% } %>
 </div>
 
@@ -24,14 +39,14 @@ $(function () {
 
   var renderTemplate = function (lockout) {
     var template = [ ''
-      , '<div class="row list-item" id="lockout-' + lockout.id + '">'
-      , '  <div class="span8">'
-      , '    <h3><a href="/lockouts/' + lockout.id + '">' + lockout.name + '</a></h3>'
-      , '  </div>'
-      , '  <div class="span4">'
-      , '    <h3><i class="icon-list-alt"></i>' + lockout.id + '</h3>'
-      , '  </div>'
-      , '</div>'
+      , '<tr id="lockout-' + lockout.id + '">'
+      , '  <td>'
+      , '     <a href="/lockouts/' + lockout.id + '">' + lockout.name + '</a>'
+      , '  </td>'
+      , '  <td>'
+      , '    <i class="icon-list-alt"></i>' + lockout.id + ''
+      , '  </td>'
+      , '</tr>'
     ].join('');
 
     return $(template);

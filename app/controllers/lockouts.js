@@ -1,4 +1,5 @@
 var Lockouts = function () {
+  this.before(require('../helpers/passport').requireAuth);
   this.respondsWith = ['html', 'json', 'xml', 'js', 'txt'];
 
   this.index = function (req, resp, params) {

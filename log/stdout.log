@@ -1,4 +1,4 @@
-[Mon, 18 Mar 2013 21:50:44 GMT] INFO Server starting with config: {
+[Tue, 19 Mar 2013 14:35:13 GMT] INFO Server starting with config: {
   "environment": "development",
   "workers": 1,
   "port": 4000,
@@ -32,7 +32,12 @@
   "realtime": true,
   "detailedErrors": true,
   "model": {
-    "defaultAdapter": "memory"
+    "defaultAdapter": "mongo"
+  },
+  "db": {
+    "mongo": {
+      "dbname": "drsounds"
+    }
   },
   "passport": {
     "successRedirect": "/",
@@ -52,5 +57,5 @@
   },
   "secret": "ga7j3G0M7WwjyBy13P0r0p2lw1e27lhS7pGuTXv0P9yWMuriUlvXICD7lcXGCusL5SkHccTemjntAfutxm03ykDxseRyxx7xVFPMTClVwjEv0s7HQiNQuVtTomn2WBkc"
 }
-[Mon, 18 Mar 2013 21:50:44 GMT] INFO Creating 1 worker process.
-[Mon, 18 Mar 2013 21:50:45 GMT] INFO Server worker running in development on port 4000 with a PID of: 4430
+[Tue, 19 Mar 2013 14:35:13 GMT] INFO Creating 1 worker process.
+[Tue, 19 Mar 2013 14:35:14 GMT] INFO Server worker running in development on port 4000 with a PID of: 6983

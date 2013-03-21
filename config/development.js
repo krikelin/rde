@@ -22,8 +22,9 @@ var config = {
 , hostname: 'localhost'
 , port: 4000
 , model: {
-    defaultAdapter: 'memory'
+    defaultAdapter: 'mongo'
   }
+, db: {mongo: {dbname: 'drsounds'}}
 , sessions: {
     store: 'memory'
   , key: 'sid'

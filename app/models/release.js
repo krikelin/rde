@@ -7,6 +7,8 @@ var Release = function () {
     image: {type: 'string'}
   });
   this.belongsTo('User');
+  this.hasMany('Releases');
+  this.hasMany('Promotions');
   /*
   this.property('login', 'string', {required: true});
   this.property('password', 'string', {required: true});
